@@ -4,3 +4,4 @@
 
 INPUT_FILE="$1"
 source "$(dirname "$0")/input.sh"
+check_input_file
