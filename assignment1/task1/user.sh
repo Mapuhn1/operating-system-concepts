@@ -15,4 +15,5 @@ generate_password() {
 create_user() {
     local username="$1"
     local password="$2"
+    sudo useradd -m -s /bin/bash "$username" && log "Created user $username" || { log "Failed to create $username"; return 1; }
 }
