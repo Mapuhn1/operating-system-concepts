@@ -8,3 +8,5 @@ LOGFILE="user_setup_$(date +%Y%m%d_%H%M%S).log"
 source "$(dirname "$0")/logging.sh"
 source "$(dirname "$0")/input.sh"
 check_input_file
+tail -n +2 "$INPUT_FILE" | while IFS=',' read -r email birthDate groups sharedFolder; do
+
