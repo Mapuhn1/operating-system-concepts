@@ -12,6 +12,8 @@ source "$(dirname "$0")/user.sh"
 check_input_file
 tail -n +2 "$INPUT_FILE" | while IFS=',' read -r email birthDate groups sharedFolder; do
     username=$(generate_username "$email")
+    password=$(generate_password "$birthDate")
+
     log "Processing user: $username ($email)"
     if id "$username" &>/dev/null; then
         log "User $username already exists, skipping..."
