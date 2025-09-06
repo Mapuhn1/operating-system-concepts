@@ -12,3 +12,7 @@ generate_password() {
     echo "$(echo "$birth" | cut -d'/' -f1)$(echo "$birth" | cut -d'/' -f2)"
 }
 
+create_user() {
+    local username="$1"
+    local password="$2"
+}
