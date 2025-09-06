@@ -19,3 +19,6 @@ tail -n +2 "$INPUT_FILE" | while IFS=',' read -r email birthDate groups sharedFo
         log "User $username already exists, skipping..."
         continue
     fi
+
+    create_user "$username" "$password"
+    
