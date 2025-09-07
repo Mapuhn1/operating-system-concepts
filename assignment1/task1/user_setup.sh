@@ -22,5 +22,5 @@ tail -n +2 "$INPUT_FILE" | while IFS=',' read -r email birthDate groups sharedFo
         continue
     fi
 
-    create_user "$username" "$password"
-    
+    create_user "$username" "$password"   
+    setup_groups "$username" "$groups"
