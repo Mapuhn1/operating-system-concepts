@@ -30,3 +30,5 @@ tail -n +2 "$INPUT_FILE" | while IFS=',' read -r email birthDate groups sharedFo
     log "Finished setting up $username"
     echo "-------------------------------------------"
 done
+
+log "Script finished. See $LOGFILE for details."
