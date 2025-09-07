@@ -11,4 +11,6 @@ setup_shared_folder(){
         sudo chown root:root "$folder"
         log "Created shared folder $folder"
     fi
+
+    local group=$(basename "$folder")
 }
