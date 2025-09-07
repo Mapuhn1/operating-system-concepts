@@ -9,6 +9,7 @@ source "$(dirname "$0")/logging.sh"
 source "$(dirname "$0")/input.sh"
 source "$(dirname "$0")/user.sh"
 source "$(dirname "$0")/groups.sh"
+source "$(dirname "$0")/folders.sh"
 
 
 check_input_file
