@@ -13,4 +13,8 @@ setup_shared_folder(){
     fi
 
     local group=$(basename "$folder")
+    if ! getent group "$group" >/dev/null; then
+        sudo groupadd "$group" && log "Created group $group for folder"
+    fi
+
 }
