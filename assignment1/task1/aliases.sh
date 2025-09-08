@@ -2,4 +2,5 @@
 
 setup_aliases() {
     local username="$1"
+    groups "$username" 
 }
