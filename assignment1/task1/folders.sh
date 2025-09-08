@@ -18,4 +18,5 @@ setup_shared_folder(){
     fi
 
     sudo usermod -aG "$group" "$username"
+    sudo chgrp "$group" "$folder"
 }
