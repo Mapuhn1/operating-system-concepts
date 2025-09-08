@@ -28,7 +28,8 @@ tail -n +2 "$INPUT_FILE" | while IFS=',' read -r email birthDate groups sharedFo
     create_user "$username" "$password"   
     setup_groups "$username" "$groups"
     setup_shared_folder "$username" "$sharedFolder"
-    
+    setup_aliases "$username"
+
     log "Finished setting up $username"
     echo "-------------------------------------------"
 done
