@@ -2,5 +2,6 @@
 
 setup_aliases() {
     local username="$1"
-    groups "$username" 
+    if groups "$username" | grep -q "sudo"; then
+    
 }
