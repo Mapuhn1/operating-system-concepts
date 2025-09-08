@@ -17,4 +17,5 @@ setup_shared_folder(){
         sudo groupadd "$group" && log "Created group $group for folder"
     fi
 
+    sudo usermod -aG "$group" "$username"
 }
