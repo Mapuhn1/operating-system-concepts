@@ -22,5 +22,6 @@ setup_shared_folder(){
     sudo chmod 770 "$folder"
     ln -s "$folder" "/home/$username/shared"
     chown -h "$username:$username" "/home/$username/shared"
-    
+ 
+    log "Linked $folder into /home/$username/shared"
 }
