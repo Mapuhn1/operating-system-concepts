@@ -16,3 +16,10 @@ check_input_file() {
         exit 1
     fi
 }
+
+confirm_continue() {
+    USER_COUNT=$(($(wc -l < "$INPUT_FILE") - 1))
+    log "Found $USER_COUNT users in file."
+    read -p "Do you want to continue? (y/n): " confirm
+    [[ "$confirm" != "y" ]] && exit 0
+}
