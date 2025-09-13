@@ -14,4 +14,5 @@ check_backup_directory() {
     BACKUP_NAME=$(basename "$BACKUP_DIR")
     ARCHIVE_NAME="${BACKUP_NAME}.tar.gz"
     
+    log "Backing up: $BACKUP_DIR -> $ARCHIVE_NAME"
 }
