@@ -19,6 +19,9 @@ tail -n +2 "$INPUT_FILE" | while IFS=',' read -r email birthDate groups sharedFo
     username=$(generate_username "$email")
     password=$(generate_password "$birthDate")
 
+    groups=$(echo "$groups" | tr -d '\r')
+    sharedFolder=$(echo "$sharedFolder" | tr -d '\r')
+
     log "Processing user: $username ($email)"
     if id "$username" &>/dev/null; then
         log "User $username already exists, skipping..."
