@@ -8,9 +8,9 @@ LOGFILE="backup_$(date +%Y%m%d_%H%M%S).log"
 source "$(dirname "$0")/logging.sh"
 source "$(dirname "$0")/input.sh"
 source "$(dirname "$0")/backup.sh"
-
+source "$(dirname "$0")/upload.sh"
 
 check_backup_directory
 create_backup
 get_remote_details
-
+upload_backup
