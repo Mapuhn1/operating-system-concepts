@@ -20,8 +20,8 @@ setup_shared_folder(){
     sudo usermod -aG "$group" "$username"
     sudo chgrp "$group" "$folder"
     sudo chmod 770 "$folder"
-    ln -s "$folder" "/home/$username/shared"
-    chown -h "$username:$username" "/home/$username/shared"
+    sudo ln -s "$folder" "/home/$username/shared"
+    sudo chown -h "$username:$username" "/home/$username/shared"
  
     log "Linked $folder into /home/$username/shared"
 }
