@@ -24,4 +24,9 @@ get_remote_details() {
     read -p "Enter remote directory: " REMOTE_DIR
     
     REMOTE_PORT=${REMOTE_PORT:-22}
+    
+    if [[ -z "$REMOTE_HOST" || -z "$REMOTE_USER" || -z "$REMOTE_DIR" ]]; then
+        log "ERROR: All remote details are required"
+        exit 1
+    fi
 }
