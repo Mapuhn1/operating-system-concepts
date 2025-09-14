@@ -16,3 +16,10 @@ check_backup_directory() {
     
     log "Backing up: $BACKUP_DIR -> $ARCHIVE_NAME"
 }
+
+get_remote_details() {
+    read -p "Enter remote server IP/hostname: " REMOTE_HOST
+    read -p "Enter port: " REMOTE_PORT
+    read -p "Enter username: " REMOTE_USER
+    read -p "Enter remote directory: " REMOTE_DIR
+}
