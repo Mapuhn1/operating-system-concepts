@@ -14,6 +14,7 @@ This set of Bash scripts automates the creation of user accounts, assigns shared
 | `groups.sh`       |  |
 | `input.sh`       |  |
 | `logging.sh`       |  |
+| `aliases.sh`      |  |
 
 
 
