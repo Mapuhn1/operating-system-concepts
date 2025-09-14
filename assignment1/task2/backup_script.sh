@@ -12,4 +12,5 @@ source "$(dirname "$0")/backup.sh"
 
 check_backup_directory
 create_backup
+get_remote_details
 
