@@ -22,4 +22,6 @@ get_remote_details() {
     read -p "Enter port: " REMOTE_PORT
     read -p "Enter username: " REMOTE_USER
     read -p "Enter remote directory: " REMOTE_DIR
+    
+    REMOTE_PORT=${REMOTE_PORT:-22}
 }
