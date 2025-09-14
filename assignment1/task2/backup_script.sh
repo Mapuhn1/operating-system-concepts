@@ -10,4 +10,5 @@ source "$(dirname "$0")/input.sh"
 source "$(dirname "$0")/backup.sh"
 
 
+check_backup_directory
 
