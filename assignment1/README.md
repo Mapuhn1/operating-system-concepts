@@ -34,6 +34,15 @@ Before running any scripts, ensure the following:
 - All scripts are executable:  
   ```bash
    chmod +x user.sh folders.sh user_setup.sh logging.sh input.sh groups.sh aliases.sh
+
+## Usage 
+
+### Quick Setup
+1. **Clone this repository** to your home directory
+2. **Create an alias** for easy execution:
+```bash
+   alias task1='cd ~/operating-system-concepts/assignment1/task1 && ./user_setup.sh'
+```
 ## Input Files ( 2 Options)
 
 - **URI** - A link to the user web based csv file: 
