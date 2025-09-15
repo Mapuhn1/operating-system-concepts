@@ -5,6 +5,7 @@
 INPUT_FILE="$1"
 LOGFILE="user_setup_$(date +%Y%m%d_%H%M%S).log"
 
+# Source component modules
 source "$(dirname "$0")/logging.sh"
 source "$(dirname "$0")/input.sh"
 source "$(dirname "$0")/user.sh"
@@ -12,15 +13,15 @@ source "$(dirname "$0")/groups.sh"
 source "$(dirname "$0")/folders.sh"
 source "$(dirname "$0")/aliases.sh"
 
+# Validate input and confirm execution
 check_input_file
 confirm_continue
 
-tail -n +2 "$INPUT_FILE" | while IFS=',' read -r email birthDate groups sharedFolder; do
+# Process each user entry
+tail -n +2 "$INPUT_FILE" | tr -d '\r' | sed 's/"//g' | while IFS=',' read -r email birthDate groups sharedFolder; do
     username=$(generate_username "$email")
     password=$(generate_password "$birthDate")
-
-    groups=$(echo "$groups" | tr -d '\r')
-    sharedFolder=$(echo "$sharedFolder" | tr -d '\r')
+    
 
     log "Processing user: $username ($email)"
     if id "$username" &>/dev/null; then
