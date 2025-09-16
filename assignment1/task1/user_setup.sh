@@ -18,7 +18,7 @@ check_input_file
 confirm_continue
 
 # Process each user entry
-tail -n +2 "$INPUT_FILE" | tr -d '\r' | sed 's/"//g' | while IFS=',' read -r email birthDate groups sharedFolder; do
+while IFS=',' read -r email birthDate groups sharedFolder; do
     username=$(generate_username "$email")
     password=$(generate_password "$birthDate")
     
@@ -36,6 +36,6 @@ tail -n +2 "$INPUT_FILE" | tr -d '\r' | sed 's/"//g' | while IFS=',' read -r ema
 
     log "Finished setting up $username"
     echo "-------------------------------------------"
-done
+done < <(tail -n +2 "$INPUT_FILE" | tr -d '\r' | sed 's/"//g')
 
 log "Script finished. See $LOGFILE for details."
